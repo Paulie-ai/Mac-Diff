@@ -113,3 +113,6 @@ python script2rosetta.py --rosetta_input ../data/FFPs/toRosetta/ --fasta ../data
 
 </code></pre>
 #### * Note that the reference protein structures are available at the PDB. 
+
+### 4. Analysis
+For further analysis of the results, please refer to the evaluation scripts available at https://github.com/lujiarui/Str2Str and https://github.com/bjing2016/EigenFold.
