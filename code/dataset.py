@@ -128,7 +128,7 @@ def get_coords6d(xyz, dmax=20.0, normalize=True):
     # fast neighbors search to collect all
     # Cb-Cb pairs within dmax
     kdCb = scipy.spatial.cKDTree(Cb)  # must be two dimension.
-    indices = kdCb.query_ball_tree(kdCb, dmax)  # (l,) list. 每个list里n个.
+    indices = kdCb.query_ball_tree(kdCb, dmax)  # (l,) list.
 
     # indices of contacting residues
     idx = np.array([[i,j] for i in range(len(indices)) for j in indices[i] if i != j]).T
