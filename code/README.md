@@ -42,7 +42,7 @@ We provide three weight files of Mac-Diff.
 ## Usage
 
 ### 1. Demo of making inference.
-<p>The well-trained models are saved in <code>/code/checkpoints/*</code>. These models were trained under two types of training datasets (1,674 MD trajectories and Protein Structure Data on or before May, 1st, 2022). <code>inference.py</code> is used for making predictions using well-trained models. </p>
+<p>The well-trained models are saved in <code>/code/checkpoints/*</code>. These models were trained under two types of training datasets (1,674 MD trajectories or Protein Structure Data on or before May, 1st, 2022). <code>inference.py</code> is used for making predictions using well-trained models. </p>
 
 <pre>
 <code>Usage: python inference.py [options]
