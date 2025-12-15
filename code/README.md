@@ -56,7 +56,7 @@ We provide two weight files of Mac-Diff.
 ## Usage
 
 ### 1. Demo of making inference.
-<p>The well-trained models are saved in <code>/data/checkpoints/*</code>. These models were trained under two types of training datasets (MD trajectories Data and Protein Structure Data in the PDB). <code>test.py</code> is used for making predictions using well-trained models. </p>
+<p>The well-trained models are saved in <code>/code/checkpoints/*</code>. These models were trained under two types of training datasets (MD trajectories Data and Protein Structure Data in the PDB). <code>test.py</code> is used for making predictions using well-trained models. </p>
 
 <pre>
 <code>Usage: python test.py [options]
