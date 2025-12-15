@@ -1,2 +1,0 @@
-CUDA_VISIBLE_DEVICES=0 python trRosetta.py -NPZ ../data/FFPs/toRosetta/sample2rosetta_1.npz -FASTA ../data/FFPs/HOMEODOMAIN.fasta -OUT ../data/FFPs/Rosetta_outputs/0.pdb
-CUDA_VISIBLE_DEVICES=0 python trRosetta.py -NPZ ../data/FFPs/toRosetta/sample2rosetta_0.npz -FASTA ../data/FFPs/HOMEODOMAIN.fasta -OUT ../data/FFPs/Rosetta_outputs/1.pdb
