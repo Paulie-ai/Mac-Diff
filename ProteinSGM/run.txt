@@ -1,1 +1,0 @@
-python sampling_rosetta_v2.py ../data/Cfold40/Seq_128/Sampling/sampled_0.npy --fasta ../data/Cfold40/Seq_128/4ICB_1IGV.fasta --out ../data/Cfold40/Seq_128/Rosetta_outputs/0.pdb --tag 0
