@@ -2,7 +2,6 @@ import sys
 import os
 import json
 sys.path.append(os.path.abspath("score_sde_pytorch/models"))
-
 import torch
 import torch.nn.functional as F
 from pathlib import Path
@@ -20,7 +19,6 @@ import tempfile
 import shutil
 import numpy as np
 from time import time
-
 from trx_single.utils.arguments import *
 from trx_single.utils.utils_data import *
 from trx_single.utils.utils_ros import *
@@ -28,7 +26,6 @@ from pyrosetta import *
 from pyrosetta.rosetta.protocols.minimization_packing import MinMover
 from pyrosetta.rosetta.protocols.simple_moves import MutateResidue
 from pyrosetta.rosetta.core.scoring import atom_pair_constraint, dihedral_constraint, angle_constraint, pro_close
-
 from pyrosetta import *
 import proteinsgm_rosetta_min.run as rosettas
 
@@ -37,28 +34,12 @@ labels=['dist', 'omega', 'theta', 'phi']
 
 
 def proteinsgm_main(list_datas, args):
-    parser = argparse.ArgumentParser()
-    # parser.add_argument('data', type=str)
-    # parser.add_argument('--tag', type=str, default="")
-    # parser.add_argument('--index', type=int, default=1) # 1-indexing
-    # parser.add_argument('--pdb', type=str, default=None)
-    # parser.add_argument("--fasta", dest="FASTA",type=str, default=None)
-    
-    # parser.add_argument('--n_iter', type=int, default=10)
-    # parser.add_argument('--dist_std', type=float, default=2) # 2
-    # parser.add_argument('--angle_std', type=float, default=20) # 20
-    # parser.add_argument('--fastdesign', type=bool, default=False) 
-    # parser.add_argument('--fastrelax', type=bool, default=True)
-    
-    # parser.add_argument('--out', type=str, default=None)
-    # args = parser.parse_args()
 
     n_iter = 10
     dist_std = 2
     angle_std = 20
     fastdesign = False
     fastrelax = True
-
 
     for num, data in enumerate(list_datas):
     ### HARD-CODED FOR PROPER NAMING ### .parent.stem
@@ -408,25 +389,7 @@ def onehot(binned_sample):
 
 
 def to_bins_main(sampled_6d):
-    # parser = argparse.ArgumentParser(usage = " Convert backbone geometories value to probability distribution ")
-    # parser.add_argument('--sample_dir', type=str, help='inference samples with 6d')
-    
-    # parser.add_argument("--out_ProbD", type=str,required=True, help="saved npz dir")
-    # parser.add_argument('--tags', type=str, default='test', help='tags like pdbid same to save dir')
-    # parser.add_argument('--symm', type=bool, default=True, help='symm dist and omega values')
-    # parser.add_argument('--sigma', type=float, default=1, help='gaussian distribution sigma, treated not single value but distribution')
-    # args = parser.parse_args()
-
-
-    # coords_path = args.sample_dir   
-    # coords_path = Path(coords_path)
-    # sampled_6d_paths = os.listdir(coords_path)
-    # out_path = args.out_ProbD
-    # #workdir = Path('sampling','toRosetta', args.tags)
-    # workdir = Path(out_path,'toRosetta')
-    # print(workdir)
-    # workdir.mkdir(parents=True, exist_ok=True)
-
+  
     npz_list = []
     
     for ith, coords_6d in enumerate(sampled_6d):
@@ -613,7 +576,6 @@ if __name__ == "__main__":
     parser.add_argument('--seed', type=int, default=42, help='random seed')
     parser.add_argument('--num_samples_eval', type=int, default=100)
     parser.add_argument('--task', type=str, default='trRosetta', help='lst text save folder',choices=['trRosetta', 'ProteinSGM',])
-    
     parser.add_argument('-pd', type=float, dest='pcut', default=params['PCUT'], help='min probability of distance restraints')
     parser.add_argument('-m', type=int, dest='mode', default=2, choices=[0,1,2], help='0: sh+m+l, 1: (sh+m)+l, 2: (sh+m+l)')
     parser.add_argument('-w', type=str, dest='wdir', default=params['WDIR'], help='folder to store temp files')
