@@ -24,9 +24,9 @@ sampling:
   sampling_h_init: 0.01
 
 data:
-  dataset_path: "/dataStor/home/blwang/protein_diffusion/github_macdiff/20250620/code/Mac-Diff/dataset/PDB256_quick/PDB256_train"
-  dataset_testpath: "/home/clwang/wcls/v4/rebuttal/vp-256/datasets/PDB256_test"
-  split_csv: "/data/home/blwang/protein_diffusion/train_PDBs4altconfs/MacDiff/configs/split_date_val.csv"
+  dataset_path: "/dataStor/home/Macdiff/dataset/PDB256_train"
+  dataset_testpath: "/dataStor/home/Macdiff/dataset/PDB256_test"
+  split_csv: "/dataStor/home/macdiff/dataset/PDB256_train/MacDiff/configs/split_date_val.csv"
   min_res_num: 80
   max_res_num: 256
   num_channels: 5
