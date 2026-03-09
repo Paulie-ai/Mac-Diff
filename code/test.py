@@ -513,7 +513,7 @@ def main(args):
     # Initialize model.
     score_model = get_model(config)
     loaded_state = torch.load(args.checkpoint, map_location=config.device)
-    score_model.load_state_dict(loaded_state)
+    score_model.load_state_dict(loaded_state, strict=False)
 
     # Load SDE
     if config.training.sde == "vesde":
