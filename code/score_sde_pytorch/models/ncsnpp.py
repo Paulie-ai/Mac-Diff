@@ -246,7 +246,7 @@ class UNetModel(nn.Module):
     
     self.ipascore = ipa_pytorch.IpaScore(model_conf=True, edge_in=512)
     
-    self.o_proj = nn.Linear(config.model.context_dim, 512, bias=True)
+    self.o_proj = nn.Linear(config.model.context_dim*2, 512, bias=True)
     torch.nn.init.zeros_(self.o_proj.bias)
     self.layernorm = nn.LayerNorm(self.context_dim*2)
 
